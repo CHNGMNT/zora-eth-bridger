@@ -88,6 +88,10 @@ def main():
 
     private_keys = bridger.read_private_keys("keys.txt")
 
+    if not private_keys:
+        cprint("Отсутствуют приватные ключи. Завершаю работу.", "red")
+        return
+
     if shuffle:
         random.shuffle(private_keys)
 
